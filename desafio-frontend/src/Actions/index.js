@@ -1,4 +1,4 @@
-export const changeInContribuition = (newInContribuition) => ({
+export const changeInContribuitionAction = (newInContribuition) => ({
   type: 'CHANGE_INCONTRIBUITION',
   newInContribuition,
 });
