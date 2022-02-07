@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 const nameToKey = {
   'Aporte Inicial': 'inContribuition',
+  'Aporte Mensal': 'mensalContribuition',
 };
 
 class InputCurrency extends React.Component {
@@ -12,11 +13,12 @@ class InputCurrency extends React.Component {
   };
 
   render() {
-    const { name, changeCurrencyState } = this.props;
+    const { name, changeCurrencyState, currencyState } = this.props;
     return (
       <label htmlFor={ name }>
         <h3>{ name }</h3>
         <input
+          value={ currencyState[nameToKey[name]] }
           onChange={ ({ target: { value } }) => changeCurrencyState(nameToKey[name], value) }
           type="text"
           name={ name }
@@ -28,7 +30,7 @@ class InputCurrency extends React.Component {
 };
 
 const mapStateToProps = (state) => ({
-  inContribuition: state.myReducer.inContribuition,
+  currencyState: state.myReducer,
 });
 const mapDispatchToProps = (dispatch) => ({
   changeCurrencyState: (key, state) => dispatch(changeCurrencyStateAction(key, state)),

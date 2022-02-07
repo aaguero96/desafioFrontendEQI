@@ -5,6 +5,7 @@ function App() {
     <>
       <h1>Simulador de Investimentos</h1>
       <InputCurrency name={ "Aporte Inicial" }/>
+      <InputCurrency name={ "Aporte Mensal" }/>
     </>
   );
 }
