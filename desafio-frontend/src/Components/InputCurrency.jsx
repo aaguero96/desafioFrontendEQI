@@ -2,13 +2,23 @@ import React from 'react';
 // import { connect } from 'react-redux';
 
 class InputCurrency extends React.Component {
+  constructor() {
+    super();
+  };
   render() {
+    const { name } = this.props;
     return (
-      <div>
-      </div>
+      <label htmlFor={ name }>
+        { name }
+        <input
+          type="text"
+          name={ name }
+          id={ name }
+        />
+      </label>
     )
   }
-}
+};
 
 // const mapStateToProps = (state) => ({});
 // const mapDispatchToProps = (dispatch) => ({})
