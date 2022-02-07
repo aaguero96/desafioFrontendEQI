@@ -1,5 +1,6 @@
 import React from 'react';
-// import { connect } from 'react-redux';
+import { changeInContribuitionAction } from '../Actions';
+import { connect } from 'react-redux';
 
 class InputCurrency extends React.Component {
   constructor() {
@@ -20,8 +21,12 @@ class InputCurrency extends React.Component {
   }
 };
 
-// const mapStateToProps = (state) => ({});
-// const mapDispatchToProps = (dispatch) => ({})
-// export default connect(mapStateToProps, mapDispatchToProps)(InputCurrency);
+const mapStateToProps = (state) => ({
+  inContribuition: state.myReducer.inContribuition,
+});
+const mapDispatchToProps = (dispatch) => ({
+  changeInContribuition: (state) => dispatch(changeInContribuitionAction(state)),
+})
+export default connect(mapStateToProps, mapDispatchToProps)(InputCurrency);
 
 export default InputCurrency;
