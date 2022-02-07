@@ -1,17 +1,19 @@
 import React from 'react';
-import { changeInContribuitionAction } from '../Actions';
+import { changeCurrencyStateAction } from '../Actions';
 import { connect } from 'react-redux';
 
 class InputCurrency extends React.Component {
   constructor() {
     super();
   };
+
   render() {
-    const { name } = this.props;
+    const { name, changeCurrencyState } = this.props;
     return (
       <label htmlFor={ name }>
         <h3>{ name }</h3>
         <input
+          onChange={ ({ target: { value } }) => changeCurrencyState("inContribuition", value) }
           type="text"
           name={ name }
           id={ name }
@@ -25,6 +27,6 @@ const mapStateToProps = (state) => ({
   inContribuition: state.myReducer.inContribuition,
 });
 const mapDispatchToProps = (dispatch) => ({
-  changeInContribuition: (state) => dispatch(changeInContribuitionAction(state)),
+  changeCurrencyState: (key, state) => dispatch(changeCurrencyStateAction(key, state)),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(InputCurrency);

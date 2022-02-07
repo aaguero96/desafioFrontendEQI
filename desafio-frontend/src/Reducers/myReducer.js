@@ -4,10 +4,10 @@ const INITIAL_STATE = {
 
 export default function myReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case 'CHANGE_INCONTRIBUITION':
+    case 'CHANGE_CURRENCY_STATE':
       return {
         ...state,
-        inContribuition: action.newInContribuition,
+        [action.key]: action.newCurrencyState,
       }
     default:
       return state;
