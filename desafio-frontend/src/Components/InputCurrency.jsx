@@ -9,7 +9,7 @@ class InputCurrency extends React.Component {
     const { name } = this.props;
     return (
       <label htmlFor={ name }>
-        { name }
+        <h3>{ name }</h3>
         <input
           type="text"
           name={ name }
