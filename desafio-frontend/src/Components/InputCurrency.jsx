@@ -26,7 +26,5 @@ const mapStateToProps = (state) => ({
 });
 const mapDispatchToProps = (dispatch) => ({
   changeInContribuition: (state) => dispatch(changeInContribuitionAction(state)),
-})
+});
 export default connect(mapStateToProps, mapDispatchToProps)(InputCurrency);
-
-export default InputCurrency;
