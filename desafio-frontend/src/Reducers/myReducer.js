@@ -1,5 +1,5 @@
 export const INITIAL_INCOME = 'bruto';
-export const INITIAL_INDEXING = 'liquido';
+export const INITIAL_INDEXING = 'pre';
 
 const INITIAL_STATE = {
   inContribuition: '',
