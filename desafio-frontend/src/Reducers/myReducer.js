@@ -10,6 +10,11 @@ export default function myReducer(state = INITIAL_STATE, action) {
         ...state,
         [action.key]: action.newCurrencyState,
       }
+    case 'CHANGE_PERCENTAGE_STATE':
+      return {
+        ...state,
+        [action.key]: action.newPercentageState,
+      }
     default:
       return state;
   }
