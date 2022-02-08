@@ -3,6 +3,7 @@ import InputPercentage from './Components/InputPercentage';
 import InputInteger from './Components/InputInteger'
 import InputIncome from './Components/InputIncome';
 import InputIndexing from './Components/InputIndexing';
+import CleanButton from './Components/CleanButton';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <InputPercentage name={ "IPCA (ao ano)" }/>
       <InputPercentage name={ "CDI (ao ano)" }/>
       <InputInteger name={ "Prazo (em meses)" }/>
+      <CleanButton />
     </>
   );
 }
