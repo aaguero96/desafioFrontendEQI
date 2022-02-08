@@ -1,6 +1,9 @@
 const INITIAL_STATE = {
   inContribuition: '',
   mensalContribuition: '',
+  profitability: '',
+  ipca: '',
+  cdi: '',
 };
 
 export default function myReducer(state = INITIAL_STATE, action) {
@@ -9,6 +12,11 @@ export default function myReducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         [action.key]: action.newCurrencyState,
+      }
+    case 'CHANGE_PERCENTAGE_STATE':
+      return {
+        ...state,
+        [action.key]: action.newPercentageState,
       }
     default:
       return state;
