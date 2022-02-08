@@ -36,6 +36,8 @@ export function myReducer(state = INITIAL_STATE, action) {
         ...state,
         indexing: action.newIndexing,
       }
+    case 'CLEAN_STATES':
+      return INITIAL_STATE;
     default:
       return state;
   }
