@@ -32,6 +32,11 @@ export function myReducer(state = INITIAL_STATE, action) {
         ...state,
         income: action.newIncome,
       }
+    case 'CHANGE_INDEXING':
+      return {
+        ...state,
+        indexing: action.newIndexing,
+      }
     default:
       return state;
   }
