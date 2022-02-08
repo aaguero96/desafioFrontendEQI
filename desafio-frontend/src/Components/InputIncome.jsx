@@ -7,7 +7,7 @@ class InputIncome extends React.Component {
 
   render() {
     return (
-      <h1>Rendimento</h1>
+      <h3>Rendimento</h3>
     )
   }
 };
