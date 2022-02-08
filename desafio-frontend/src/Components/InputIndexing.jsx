@@ -1,7 +1,7 @@
 import React from 'react';
 import { getSimulationFromAPI } from '../Functions/functions';
 import '../CSS/InputIndexing.css';
-import { INITIAL_INDEXING } from '../Reducers/myReducer';
+import { INITIAL_STATE } from '../Reducers/myReducer';
 import { changeIndexingAction } from '../Actions';
 import { connect } from 'react-redux';
 
@@ -11,7 +11,6 @@ class InputIndexing extends React.Component {
     this.state = {
       indexingList: [],
       loadingList: true,
-      selectedIndexing: INITIAL_INDEXING,
     };
   };
 
@@ -26,7 +25,7 @@ class InputIndexing extends React.Component {
   };
 
   correctClass = (element) => {
-    const { selectedIndexing } = this.state;
+    const { selectedIndexing } = this.props;
     const NON_SELECTED_CLASS = 'non-selected';
     const SELECTED_CLASS = 'selected';
     if (selectedIndexing === element) {
@@ -36,10 +35,8 @@ class InputIndexing extends React.Component {
   };
 
   changeSelected = ({ target: { name } }) => {
-    this.setState({
-      selectedIndexing: name,
-    });
-    this.props.changeIndexing(name);
+    const { changeIndexing } = this.props;
+    changeIndexing(name);
   };
 
   renderButtons = () => {
@@ -78,7 +75,10 @@ class InputIndexing extends React.Component {
   }
 };
 
+const mapStateToProps = (state) => ({
+  selectedIndexing: state.myReducer.indexing,
+});
 const mapDispatchToProps = (dispatch) => ({
   changeIndexing: (state) => dispatch(changeIndexingAction(state)),
 });
-export default connect(null, mapDispatchToProps)(InputIndexing);
+export default connect(mapStateToProps, mapDispatchToProps)(InputIndexing);

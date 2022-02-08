@@ -1,7 +1,6 @@
 import React from 'react';
 import { getSimulationFromAPI } from '../Functions/functions';
 import '../CSS/InputIncome.css';
-import { INITIAL_INCOME } from '../Reducers/myReducer';
 import { changeIncomeAction } from '../Actions';
 import { connect } from 'react-redux';
 
@@ -11,7 +10,6 @@ class InputIncome extends React.Component {
     this.state = {
       incomeList: [],
       loadingList: true,
-      selectedIncome: INITIAL_INCOME,
     };
   };
 
@@ -26,7 +24,7 @@ class InputIncome extends React.Component {
   };
 
   correctClass = (element) => {
-    const { selectedIncome } = this.state;
+    const { selectedIncome } = this.props;
     const NON_SELECTED_CLASS = 'non-selected';
     const SELECTED_CLASS = 'selected';
     if (selectedIncome === element) {
@@ -36,10 +34,8 @@ class InputIncome extends React.Component {
   };
 
   changeSelected = ({ target: { name } }) => {
-    this.setState({
-      selectedIncome: name,
-    });
-    this.props.changeIncome(name);
+    const { changeIncome } = this.props;
+    changeIncome(name)
   };
 
   renderButtons = () => {
@@ -78,7 +74,10 @@ class InputIncome extends React.Component {
   }
 };
 
+const mapStateToProps = (state) => ({
+  selectedIncome: state.myReducer.income,
+});
 const mapDispatchToProps = (dispatch) => ({
   changeIncome: (state) => dispatch(changeIncomeAction(state)),
 });
-export default connect(null, mapDispatchToProps)(InputIncome);
+export default connect(mapStateToProps, mapDispatchToProps)(InputIncome);
