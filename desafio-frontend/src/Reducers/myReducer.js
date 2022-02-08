@@ -4,6 +4,7 @@ const INITIAL_STATE = {
   profitability: '',
   ipca: '',
   cdi: '',
+  deadlines: '',
 };
 
 export default function myReducer(state = INITIAL_STATE, action) {
@@ -17,6 +18,11 @@ export default function myReducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         [action.key]: action.newPercentageState,
+      }
+    case 'CHANGE_INTEGER_STATE':
+      return {
+        ...state,
+        [action.key]: action.newIntegerState,
       }
     default:
       return state;
