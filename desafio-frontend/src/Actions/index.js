@@ -9,3 +9,9 @@ export const changePercentageStateAction = (key, newPercentageState) => ({
   newPercentageState,
   key,
 });
+
+export const changeIntegerStateAction = (key, newIntegerState) => ({
+  type: 'CHANGE_INTEGER_STATE',
+  newIntegerState,
+  key,
+});
