@@ -1,7 +1,7 @@
 import React from 'react';
 import { getSimulationFromAPI } from '../Functions/functions';
 import '../CSS/InputIndexing.css';
-import { INITIAL_INDEXING } from '../Reducers/myReducer';
+import { INITIAL_STATE } from '../Reducers/myReducer';
 import { changeIndexingAction } from '../Actions';
 import { connect } from 'react-redux';
 
@@ -11,7 +11,7 @@ class InputIndexing extends React.Component {
     this.state = {
       indexingList: [],
       loadingList: true,
-      selectedIndexing: INITIAL_INDEXING,
+      selectedIndexing: INITIAL_STATE.indexing,
     };
   };
 
