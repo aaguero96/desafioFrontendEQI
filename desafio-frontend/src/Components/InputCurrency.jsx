@@ -20,7 +20,7 @@ class InputCurrency extends React.Component {
         <input
           value={ currencyState[nameToKey[name]] }
           onChange={ ({ target: { value } }) => changeCurrencyState(nameToKey[name], value) }
-          type="text"
+          type="text" 
           name={ name }
           id={ name }
         />
