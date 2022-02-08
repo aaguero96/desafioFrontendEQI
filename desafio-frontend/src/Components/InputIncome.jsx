@@ -1,7 +1,7 @@
 import React from 'react';
 import { getSimulationFromAPI } from '../Functions/functions';
 import '../CSS/InputIncome.css';
-import { INITIAL_INCOME } from '../Reducers/myReducer';
+import { INITIAL_STATE } from '../Reducers/myReducer';
 import { changeIncomeAction } from '../Actions';
 import { connect } from 'react-redux';
 
@@ -11,7 +11,7 @@ class InputIncome extends React.Component {
     this.state = {
       incomeList: [],
       loadingList: true,
-      selectedIncome: INITIAL_INCOME,
+      selectedIncome: INITIAL_STATE.income,
     };
   };
 
