@@ -1,6 +1,9 @@
 const INITIAL_STATE = {
   inContribuition: '',
   mensalContribuition: '',
+  profitability: '',
+  ipca: '',
+  cdi: '',
 };
 
 export default function myReducer(state = INITIAL_STATE, action) {
