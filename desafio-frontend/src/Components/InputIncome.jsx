@@ -1,6 +1,7 @@
 import React from 'react';
 import { getSimulationFromAPI } from '../Functions/functions';
 import '../CSS/InputIncome.css';
+import { INITIAL_INCOME } from '../Reducers/myReducer';
 
 class InputIncome extends React.Component {
   constructor() {
@@ -8,7 +9,7 @@ class InputIncome extends React.Component {
     this.state = {
       incomeList: [],
       loadingList: true,
-      selectedIncome: 'bruto',
+      selectedIncome: INITIAL_INCOME,
     };
   };
 
