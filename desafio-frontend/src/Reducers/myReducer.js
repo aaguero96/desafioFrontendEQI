@@ -1,4 +1,5 @@
 export const INITIAL_INCOME = 'bruto';
+export const INITIAL_INDEXING = 'liquido';
 
 const INITIAL_STATE = {
   inContribuition: '',
@@ -7,7 +8,8 @@ const INITIAL_STATE = {
   ipca: '',
   cdi: '',
   deadlines: '',
-  income: 'bruto',
+  income: INITIAL_INCOME,
+  indexing: INITIAL_INDEXING,
 };
 
 export function myReducer(state = INITIAL_STATE, action) {
