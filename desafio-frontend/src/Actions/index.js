@@ -15,3 +15,8 @@ export const changeIntegerStateAction = (key, newIntegerState) => ({
   newIntegerState,
   key,
 });
+
+export const changeIncomeAction = (newIncome) => ({
+  type: 'CHANGE_INCOME',
+  newIncome,
+});

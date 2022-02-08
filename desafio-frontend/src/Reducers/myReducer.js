@@ -1,3 +1,5 @@
+export const INITIAL_INCOME = 'bruto';
+
 const INITIAL_STATE = {
   inContribuition: '',
   mensalContribuition: '',
@@ -5,9 +7,10 @@ const INITIAL_STATE = {
   ipca: '',
   cdi: '',
   deadlines: '',
+  income: 'bruto',
 };
 
-export default function myReducer(state = INITIAL_STATE, action) {
+export function myReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     case 'CHANGE_CURRENCY_STATE':
       return {
@@ -23,6 +26,11 @@ export default function myReducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         [action.key]: action.newIntegerState,
+      }
+    case 'CHANGE_INCOME':
+      return {
+        ...state,
+        income: action.newIncome,
       }
     default:
       return state;
