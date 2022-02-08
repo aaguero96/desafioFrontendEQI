@@ -3,8 +3,9 @@ import { changePercentageStateAction } from '../Actions';
 import { connect } from 'react-redux';
 
 const nameToKey = {
-  'Aporte Inicial': 'inContribuition',
-  'Aporte Mensal': 'mensalContribuition',
+  'Rentabilidade': 'profitability',
+  'IPCA (ao ano)': 'ipca',
+  'CDI (ao ano)': 'cdi',
 };
 
 class InputPercentage extends React.Component {
