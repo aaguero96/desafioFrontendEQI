@@ -8,7 +8,9 @@ class CleanButton extends React.Component {
   render() {
     const { name, changePercentageState, percentageState } = this.props;
     return (
-      <button>
+      <button
+        type="button"
+      >
         Limpar Campos
       </button>
     )

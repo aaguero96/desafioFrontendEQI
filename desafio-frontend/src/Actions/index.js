@@ -26,3 +26,7 @@ export const changeIndexingAction = (newIndexing) => ({
   newIndexing,
 });
 
+export const cleanStates = () => ({
+  type: 'CLEAN_STATES',
+});
+
