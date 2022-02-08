@@ -20,7 +20,7 @@ class InputIndexing extends React.Component {
     this.setState({
       loadingList: false,
       indexingList: simulationData
-        .map((element) => element.tipoRendimento)
+        .map((element) => element.tipoIndexacao)
         .filter((element, index, arr) => arr.indexOf(element) === index),
     });
   };
