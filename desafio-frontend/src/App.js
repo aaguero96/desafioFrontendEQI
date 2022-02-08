@@ -1,5 +1,6 @@
-import InputCurrency from "./Components/InputCurrency";
-import InputPercentage from "./Components/InputPercentage";
+import InputCurrency from './Components/InputCurrency';
+import InputPercentage from './Components/InputPercentage';
+import InputInteger from './Components/InputInteger'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <InputPercentage name={ "Rentabilidade" }/>
       <InputPercentage name={ "IPCA (ao ano)" }/>
       <InputPercentage name={ "CDI (ao ano)" }/>
+      <InputInteger name={ "Prazo (em meses)" }/>
     </>
   );
 }
