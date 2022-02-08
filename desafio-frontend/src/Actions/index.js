@@ -20,3 +20,9 @@ export const changeIncomeAction = (newIncome) => ({
   type: 'CHANGE_INCOME',
   newIncome,
 });
+
+export const changeIndexingAction = (newIndexing) => ({
+  type: 'CHANGE_INDEXING',
+  newIndexing,
+});
+

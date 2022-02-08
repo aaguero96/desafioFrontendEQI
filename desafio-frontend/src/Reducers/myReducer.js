@@ -1,4 +1,5 @@
 export const INITIAL_INCOME = 'bruto';
+export const INITIAL_INDEXING = 'pre';
 
 const INITIAL_STATE = {
   inContribuition: '',
@@ -7,7 +8,8 @@ const INITIAL_STATE = {
   ipca: '',
   cdi: '',
   deadlines: '',
-  income: 'bruto',
+  income: INITIAL_INCOME,
+  indexing: INITIAL_INDEXING,
 };
 
 export function myReducer(state = INITIAL_STATE, action) {
@@ -31,6 +33,11 @@ export function myReducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         income: action.newIncome,
+      }
+    case 'CHANGE_INDEXING':
+      return {
+        ...state,
+        indexing: action.newIndexing,
       }
     default:
       return state;
