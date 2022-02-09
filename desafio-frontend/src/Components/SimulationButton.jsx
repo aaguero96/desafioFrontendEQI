@@ -5,6 +5,7 @@ import {
   validationInteger,
   validationPercentage,
 } from '../Functions/functions';
+import AggregateBarChart from './AggregateBarChart';
 
 class SimulationButton extends React.Component {
   constructor() {
@@ -95,7 +96,10 @@ class SimulationButton extends React.Component {
       <div>
         {
           this.validationFill() ? (
-            this.showParameters()
+            <div>
+              { this.showParameters() }
+              <AggregateBarChart />
+            </div>
           ) : (
             <span>Preencha os campos ao lado</span>
           )
