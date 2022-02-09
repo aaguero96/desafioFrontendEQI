@@ -6,16 +6,16 @@ class SelectFrequency extends React.Component {
     super();
   };
 
-  options = [
-    'mensal',
-    'anual',
-  ]
+  option = {
+    'mensal': 1,
+    'anual': 12,
+  }
 
   render() {
     return (
       <select>
         {
-          this.options.map((element) => (
+          Object.keys(this.option).map((element) => (
             <option value={ element }>
               { element }
             </option>
