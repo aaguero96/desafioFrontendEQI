@@ -26,12 +26,10 @@ class SelectFrequency extends React.Component {
   }
 };
 
-// const mapStateToProps = (state) => ({
-//   percentageState: state.myReducer,
-// });
-// const mapDispatchToProps = (dispatch) => ({
-//   changePercentageState: (state) => dispatch(changePercentageStateAction(state)),
-// });
-// export default connect(mapStateToProps, mapDispatchToProps)(SelectFrequency);
-
-export default SelectFrequency;
+const mapStateToProps = (state) => ({
+  frequency: state.myReducer,
+});
+const mapDispatchToProps = (dispatch) => ({
+  changePercentageState: (state) => dispatch(changePercentageStateAction(state)),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(SelectFrequency);
