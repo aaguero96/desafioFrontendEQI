@@ -3,7 +3,7 @@ import { changeIntegerStateAction } from '../Actions';
 import { connect } from 'react-redux';
 
 const nameToKey = {
-  'Prazo (em meses)': 'deadlines',
+  'Prazo': 'deadlines',
 };
 
 class InputInteger extends React.Component {

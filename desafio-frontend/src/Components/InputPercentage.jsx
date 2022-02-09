@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 
 const nameToKey = {
   'Rentabilidade': 'profitability',
-  'IPCA (ao ano)': 'ipca',
-  'CDI (ao ano)': 'cdi',
+  'IPCA': 'ipca',
+  'CDI': 'cdi',
 };
 
 class InputPercentage extends React.Component {
