@@ -23,7 +23,7 @@ class SelectFrequency extends React.Component {
     const selectedElement = frequency[this.nameToKey[name]];
     return (
       <select
-        defaultValue={ selectedElement }
+        value={ selectedElement }
         onChange={ ({ target: { value } }) => changeFrequency(this.nameToKey[name], value) }
       >
         {

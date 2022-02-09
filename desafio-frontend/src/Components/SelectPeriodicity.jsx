@@ -21,7 +21,7 @@ class SelectPeriodicity extends React.Component {
     const selectedElement = periodicity[this.nameToKey[name]];
     return (
       <select
-        defaultValue={ selectedElement }
+        value={ selectedElement }
         onChange={ ({ target: { value } }) => changePeriodicity(this.nameToKey[name], value) }
       >
         {
