@@ -91,14 +91,31 @@ class SimulationButton extends React.Component {
     )
   }
 
+  deadlineInMonth = () => {
+    const { myReducer: {
+      deadlines,
+      deadLinePeriodicity,
+    } } = this.props;
+    return deadlines * deadLinePeriodicity;
+  }
+
   render() {
+    const { myReducer: {
+      inContribuition,
+      mensalContribuition,
+    } } = this.props;
     return (
       <div>
         {
           this.validationFill() ? (
             <div>
               { this.showParameters() }
-              <AggregateBarChart />
+              <AggregateBarChart
+                interestRate={ this.interestRateByMonth() }
+                deadLine={ this.deadlineInMonth }
+                inContribuition={ inContribuition }
+                mensalContribuition={ mensalContribuition }
+              />
             </div>
           ) : (
             <span>Preencha os campos ao lado</span>
