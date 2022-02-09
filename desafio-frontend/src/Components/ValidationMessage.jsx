@@ -20,7 +20,7 @@ class ValidationMessage extends React.Component {
     const { validationFunction, name, myReducer } = this.props;
     const value = myReducer[this.nameToKey[name]];
     const validation = validationFunction(value);
-    if (!validation) return `O valor de ${name} deve ser um número valido`;
+    if (!validation) return `O valor de ${name} deve ser um número`;
   };
 
   render() {
