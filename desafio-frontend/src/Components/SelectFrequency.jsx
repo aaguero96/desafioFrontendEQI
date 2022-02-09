@@ -7,10 +7,10 @@ class SelectFrequency extends React.Component {
     super();
   };
 
-  option = {
-    'mensal': 1,
-    'anual': 12,
-  };
+  option = [
+    'mensal',
+    'anual',
+  ];
 
   nameToKey = {
     'Rentabilidade': 'profitabilityFreq',
@@ -36,7 +36,7 @@ class SelectFrequency extends React.Component {
         onChange={ ({ target: { value } }) => changeFrequency(this.nameToKey[name], value) }
       >
         {
-          Object.keys(this.option).map((element) => (
+          this.option.map((element) => (
             <option key={ `${name}-${element}` } value={ element }>
               { element }
             </option>
