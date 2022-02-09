@@ -30,7 +30,8 @@ export const cleanStatesAction = () => ({
   type: 'CLEAN_STATES',
 });
 
-export const changeFrequencyAction = (newFrequency) => ({
+export const changeFrequencyAction = (key, newFrequency) => ({
   type: 'CHANGE_FREQUENCY',
   newFrequency,
-})
+  key,
+});
