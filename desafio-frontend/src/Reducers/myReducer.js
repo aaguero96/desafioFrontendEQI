@@ -7,6 +7,9 @@ export const INITIAL_STATE = {
   deadlines: '',
   income: 'bruto',
   indexing: 'pre',
+  profitabilityFreq: 'anual',
+  ipcaFreq: 'anual',
+  cdiFreq: 'anual',
 };
 
 export function myReducer(state = INITIAL_STATE, action) {

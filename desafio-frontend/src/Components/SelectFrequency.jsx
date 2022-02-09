@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { changeFrequencyAction } from '../Actions';
 
 class SelectFrequency extends React.Component {
   constructor() {
@@ -30,6 +31,6 @@ const mapStateToProps = (state) => ({
   frequency: state.myReducer,
 });
 const mapDispatchToProps = (dispatch) => ({
-  changePercentageState: (state) => dispatch(changePercentageStateAction(state)),
+  changeFrequency: (state) => dispatch(changeFrequencyAction(state)),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(SelectFrequency);
