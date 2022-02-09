@@ -20,7 +20,7 @@ class SelectFrequency extends React.Component {
 
   disableButton = () => {
     const { indexing, name } = this.props;
-    if (indexing === 'pre' && name === 'Rentabilidade') {
+    if (indexing === 'pos' && name === 'Rentabilidade') {
       return true;
     }
     return false;
