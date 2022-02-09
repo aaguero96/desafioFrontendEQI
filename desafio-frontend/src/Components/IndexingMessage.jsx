@@ -16,7 +16,7 @@ class IndexingMessage extends React.Component {
 
   render() {
     return (
-      <span>{ this.message() }</span>
+      <p>{ this.message() }</p>
     )
   }
 };
