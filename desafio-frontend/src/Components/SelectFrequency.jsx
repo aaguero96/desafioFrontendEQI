@@ -1,5 +1,4 @@
 import React from 'react';
-import { changePercentageStateAction } from '../Actions';
 import { connect } from 'react-redux';
 
 class SelectFrequency extends React.Component {
@@ -7,10 +6,22 @@ class SelectFrequency extends React.Component {
     super();
   };
 
+  options = [
+    'mensal',
+    'anual',
+  ]
+
   render() {
-    const { name, changePercentageState, percentageState } = this.props;
     return (
-      
+      <select>
+        {
+          this.options.map((element) => (
+            <option value={ element }>
+              { element }
+            </option>
+          ))
+        }
+      </select>
     )
   }
 };

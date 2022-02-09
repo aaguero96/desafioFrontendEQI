@@ -4,6 +4,7 @@ import InputInteger from './Components/InputInteger'
 import InputIncome from './Components/InputIncome';
 import InputIndexing from './Components/InputIndexing';
 import CleanButton from './Components/CleanButton';
+import SelectFrequency from './Components/SelectFrequency';
 
 function App() {
   return (
@@ -13,9 +14,18 @@ function App() {
       <InputIndexing />
       <InputCurrency name={ "Aporte Inicial" }/>
       <InputCurrency name={ "Aporte Mensal" }/>
-      <InputPercentage name={ "Rentabilidade" }/>
-      <InputPercentage name={ "IPCA" }/>
-      <InputPercentage name={ "CDI" }/>
+      <div>
+        <InputPercentage name={ "Rentabilidade" }/>
+        <SelectFrequency name ={ "Rentabilidade" }/>
+      </div>
+      <div>
+        <InputPercentage name={ "IPCA" }/>
+        <SelectFrequency name ={ "IPCA" }/>
+      </div>
+      <div>
+        <InputPercentage name={ "CDI" }/>
+        <SelectFrequency name ={ "CDI" }/>
+      </div>
       <InputInteger name={ "Prazo" }/>
       <CleanButton />
     </>
