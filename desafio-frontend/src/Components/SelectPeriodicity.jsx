@@ -7,10 +7,10 @@ class SelectPeriodicity extends React.Component {
     super();
   };
 
-  option = {
-    'meses': 1,
-    'anos': 12,
-  };
+  option = [
+    'meses',
+    'anos',
+  ];
 
   nameToKey = {
     'Prazo': 'deadLinePeriodicity',
@@ -25,7 +25,7 @@ class SelectPeriodicity extends React.Component {
         onChange={ ({ target: { value } }) => changePeriodicity(this.nameToKey[name], value) }
       >
         {
-          Object.keys(this.option).map((element) => (
+          this.option.map((element) => (
             <option key={ `${name}-${element}` } value={ element }>
               { element }
             </option>
