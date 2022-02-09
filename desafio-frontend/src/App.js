@@ -14,9 +14,9 @@ function App() {
       <InputCurrency name={ "Aporte Inicial" }/>
       <InputCurrency name={ "Aporte Mensal" }/>
       <InputPercentage name={ "Rentabilidade" }/>
-      <InputPercentage name={ "IPCA (ao ano)" }/>
-      <InputPercentage name={ "CDI (ao ano)" }/>
-      <InputInteger name={ "Prazo (em meses)" }/>
+      <InputPercentage name={ "IPCA" }/>
+      <InputPercentage name={ "CDI" }/>
+      <InputInteger name={ "Prazo" }/>
       <CleanButton />
     </>
   );
