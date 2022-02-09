@@ -8,6 +8,12 @@ import SelectFrequency from './Components/SelectFrequency';
 import SelectPeriodicity from './Components/SelectPeriodicity';
 import SimulationButton from './Components/SimulationButton';
 import IndexingMessage from './Components/IndexingMessage';
+import ValidationMessage from './Components/ValidationMessage';
+import {
+  validationCurrencies,
+  validationInteger,
+  validationPercentage,
+} from './Functions/functions';
 
 function App() {
   return (
@@ -15,24 +21,34 @@ function App() {
       <h1>Simulador de Investimentos</h1>
       <InputIncome />
       <InputIndexing />
-      <InputCurrency name={ "Aporte Inicial" }/>
-      <InputCurrency name={ "Aporte Mensal" }/>
+      <div>
+        <InputCurrency name={ "Aporte Inicial" }/>
+        <ValidationMessage name={ "Aporte Inicial" } validationFunction={ validationCurrencies }/>
+      </div>
+      <div>
+        <InputCurrency name={ "Aporte Mensal" }/>
+        <ValidationMessage name={ "Aporte Mensal" } validationFunction={ validationCurrencies }/>
+      </div>
       <div>
         <InputPercentage name={ "Rentabilidade" }/>
         <SelectFrequency name ={ "Rentabilidade" }/>
         <IndexingMessage />
+        <ValidationMessage name={ "Rentabilidade" } validationFunction={ validationPercentage }/>
       </div>
       <div>
         <InputPercentage name={ "IPCA" }/>
         <SelectFrequency name ={ "IPCA" }/>
+        <ValidationMessage name={ "IPCA" } validationFunction={ validationPercentage }/>
       </div>
       <div>
         <InputPercentage name={ "CDI" }/>
         <SelectFrequency name ={ "CDI" }/>
+        <ValidationMessage name={ "CDI" } validationFunction={ validationPercentage }/>
       </div>
       <div>
         <InputInteger name={ "Prazo" }/>
         <SelectPeriodicity name={ "Prazo" } />
+        <ValidationMessage name={ "Prazo" } validationFunction={ validationInteger }/>
       </div>  
       <CleanButton />
       <SimulationButton />
