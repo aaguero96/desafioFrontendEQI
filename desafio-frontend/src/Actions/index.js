@@ -35,3 +35,9 @@ export const changeFrequencyAction = (key, newFrequency) => ({
   newFrequency,
   key,
 });
+
+export const changePeriodicityAction = (key, newPeriodicity) => ({
+  type: 'CHANGE_PERIODICITY',
+  newPeriodicity,
+  key,
+});
