@@ -9,6 +9,10 @@ class SelectPeriodicity extends React.Component {
   option = {
     'meses': 1,
     'anos': 12,
+  };
+
+  nameToKey = {
+    'Prazo': '',
   }
 
   render() {
