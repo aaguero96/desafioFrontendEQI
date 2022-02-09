@@ -6,6 +6,7 @@ import InputIndexing from './Components/InputIndexing';
 import CleanButton from './Components/CleanButton';
 import SelectFrequency from './Components/SelectFrequency';
 import SelectPeriodicity from './Components/SelectPeriodicity';
+import SimulationButton from './Components/SimulationButton';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <SelectPeriodicity name={ "Prazo" } />
       </div>  
       <CleanButton />
+      <SimulationButton />
     </>
   );
 }
