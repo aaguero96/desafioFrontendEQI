@@ -7,6 +7,7 @@ import CleanButton from './Components/CleanButton';
 import SelectFrequency from './Components/SelectFrequency';
 import SelectPeriodicity from './Components/SelectPeriodicity';
 import SimulationButton from './Components/SimulationButton';
+import IndexingMessage from './Components/IndexingMessage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <div>
         <InputPercentage name={ "Rentabilidade" }/>
         <SelectFrequency name ={ "Rentabilidade" }/>
+        <IndexingMessage />
       </div>
       <div>
         <InputPercentage name={ "IPCA" }/>
