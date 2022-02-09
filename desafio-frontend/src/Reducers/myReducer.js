@@ -41,6 +41,11 @@ export function myReducer(state = INITIAL_STATE, action) {
       }
     case 'CLEAN_STATES':
       return INITIAL_STATE;
+    case 'CHANGE_FREQUENCY':
+      return {
+        ...state,
+        [action.key]: action.newFrequency,
+      };
     default:
       return state;
   }
