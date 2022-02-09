@@ -5,6 +5,7 @@ import InputIncome from './Components/InputIncome';
 import InputIndexing from './Components/InputIndexing';
 import CleanButton from './Components/CleanButton';
 import SelectFrequency from './Components/SelectFrequency';
+import SelectPeriodicity from './Components/SelectPeriodicity';
 
 function App() {
   return (
@@ -26,7 +27,10 @@ function App() {
         <InputPercentage name={ "CDI" }/>
         <SelectFrequency name ={ "CDI" }/>
       </div>
-      <InputInteger name={ "Prazo" }/>
+      <div>
+        <InputInteger name={ "Prazo" }/>
+        <SelectPeriodicity name={ "Prazo" } />
+      </div>  
       <CleanButton />
     </>
   );
