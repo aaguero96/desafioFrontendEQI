@@ -11,6 +11,42 @@ class SimulationButton extends React.Component {
     super();
   };
 
+  frequencyObject = {
+    'mensal': 1,
+    'anual': 12,
+  };
+
+  periodicityObject = {
+
+  };
+
+  interestRateByMonth = () => {
+    const { myReducer: {
+      indexing,
+      profitability,
+      profitabilityFreq,
+      cdi,
+      cdiFreq,
+      ipca,
+      ipcaFreq,
+    } } = this.props;
+    const profiabilityByMonth = Math.pow(1 + profitability/100, 1/this.frequencyObject[profitabilityFreq]) - 1;
+    const cdiByYear = Math.pow(1 + cdi/100, 12/this.frequencyObject[cdiFreq]) - 1;
+    const ipcaByYear = Math.pow(1 + ipca/100, 12/this.frequencyObject[ipcaFreq]) - 1;
+    const profiabilityByYear = Math.pow(1 + profiabilityByMonth, 12) - 1;
+    if (indexing === 'pre') {
+      return profiabilityByMonth;
+    }
+    if (indexing === 'pos') {
+      const newProfiabilityByYear = cdiByYear * (1 + profitability/100);
+      return Math.pow(1 + newProfiabilityByYear, 1/12) - 1;
+    }
+    if (indexing === 'ipca') {
+      const newProfiabilityByYear = ipcaByYear + profiabilityByYear;
+      return Math.pow(1 + newProfiabilityByYear, 1/12) - 1;
+    }
+  };
+
   validationFill = () => {
     const { myReducer: {
       inContribuition,
@@ -40,22 +76,15 @@ class SimulationButton extends React.Component {
       cdi,
       cdiFreq,
     } } = this.props;
+    const rateByMonth = this.interestRateByMonth();
+    const rateByYear = Math.pow(1 + rateByMonth, 12) - 1;
     return (
       <>
         <div>
-          { `Contribuição Inicial: R$ ${inContribuition}` }
+          { `Juros Real Mensal: ${(rateByMonth*100).toFixed(2)} %` }
         </div>
         <div>
-          { `Aporte Mensal: R$ ${mensalContribuition}` }
-        </div>
-        <div>
-          { `Rentabilidade ${profitabilityFreq}: ${profitability} %` }
-        </div>
-        <div>
-          { `IPCA ${ipcaFreq}: ${ipca} %` }
-        </div>
-        <div>
-          { `CDI ${cdiFreq}: ${cdi} %` }
+          { `Juros Real Anual: ${(rateByYear*100).toFixed(2)} %` }
         </div>
       </>
     )
