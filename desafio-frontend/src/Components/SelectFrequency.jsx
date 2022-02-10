@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { changeFrequencyAction } from '../Actions';
+import '../CSS/DropDown.css';
 
 class SelectFrequency extends React.Component {
   constructor() {
@@ -31,6 +32,7 @@ class SelectFrequency extends React.Component {
     const selectedElement = frequency[this.nameToKey[name]];
     return (
       <select
+        className="dropdown"
         disabled={ this.disableButton() }
         value={ selectedElement }
         onChange={ ({ target: { value } }) => changeFrequency(this.nameToKey[name], value) }

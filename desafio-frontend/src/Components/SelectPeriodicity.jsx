@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { changePeriodicityAction } from '../Actions';
+import '../CSS/DropDown.css';
 
 class SelectPeriodicity extends React.Component {
   constructor() {
@@ -21,6 +22,7 @@ class SelectPeriodicity extends React.Component {
     const selectedElement = periodicity[this.nameToKey[name]];
     return (
       <select
+        className="dropdown"
         value={ selectedElement }
         onChange={ ({ target: { value } }) => changePeriodicity(this.nameToKey[name], value) }
       >
