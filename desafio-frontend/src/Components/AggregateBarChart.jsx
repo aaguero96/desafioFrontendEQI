@@ -10,6 +10,21 @@ class AggregateBarChart extends React.Component {
     super();
   };
 
+  MonthObject = {
+    0: 'jan',
+    1: 'fev',
+    2: 'mar',
+    3: 'abr',
+    4: 'mai',
+    5: 'jun',
+    6: 'jul',
+    7: 'ago',
+    8: 'set',
+    9: 'out',
+    10: 'nov',
+    11: 'dez',
+  };
+
   data = (montlyContribuition) => {
     const {
       interestRateByMonth,
@@ -29,6 +44,23 @@ class AggregateBarChart extends React.Component {
     return data;
   };
 
+  labels = () => {
+    const {
+      deadLineInMonth,
+    } = this.props;
+    const now = new Date(Date.now());
+    let year = now.getFullYear();
+    const month = now.getMonth();
+    return [...Array(deadLineInMonth + 1).keys()]
+      .map((element) => {
+        const newMonth = (month + element) % 12;
+        if (newMonth === 0) {
+          year = year + 1;
+        }
+        return `${this.MonthObject[newMonth]}/${year.toString().substring(2, 4)}`;
+      });
+  };
+
   render() {
     const {
       deadLineInMonth,
@@ -40,7 +72,7 @@ class AggregateBarChart extends React.Component {
           width="600px"
           height="300%"
           data={ {
-            labels: [...Array(deadLineInMonth + 1).keys()],
+            labels: this.labels(),
             datasets: [
               {
                 backgroundColor:'#ED8E53',
