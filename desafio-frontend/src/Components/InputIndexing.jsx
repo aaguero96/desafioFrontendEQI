@@ -39,6 +39,14 @@ class InputIndexing extends React.Component {
     changeIndexing(name);
   };
 
+  selectedSymbol = (element) => {
+    const { selectedIndexing } = this.props;
+    if (selectedIndexing === element) {
+      return '✓';
+    };
+    return '';
+  };
+
   renderButtons = () => {
     const { indexingList, loadingList } = this.state;
     if (loadingList) {
@@ -55,7 +63,7 @@ class InputIndexing extends React.Component {
           className={ `${this.correctClass(element)} selector` }
           onClick={ this.changeSelected }
         >
-          {element}
+          {`${this.selectedSymbol(element)} ${element}`}
         </button>
       ))
     )

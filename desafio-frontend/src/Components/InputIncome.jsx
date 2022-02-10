@@ -34,6 +34,14 @@ class InputIncome extends React.Component {
     return NON_SELECTED_CLASS;
   };
 
+  selectedSymbol = (element) => {
+    const { selectedIncome } = this.props;
+    if (selectedIncome === element) {
+      return '✓';
+    };
+    return '';
+  };
+
   changeSelected = ({ target: { name } }) => {
     const { changeIncome } = this.props;
     changeIncome(name)
@@ -55,7 +63,7 @@ class InputIncome extends React.Component {
           className={ `${this.correctClass(element)} selector` }
           onClick={ this.changeSelected }
         >
-          {element}
+          {`${this.selectedSymbol(element)} ${element}`}
         </button>
       ))
     )
