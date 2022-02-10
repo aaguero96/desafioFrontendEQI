@@ -15,3 +15,24 @@ export async function getSimulationFromAPI() {
   data = await data.json();
   return data;
 };
+
+// Validation for currencies
+export const validationCurrencies = (value) => {
+  const number = parseFloat(value);
+  const validation = typeof(number) === 'number' && number >= 0;
+  return validation;
+};
+
+// Validation for percentage
+export const validationPercentage = (value) => {
+  const number = parseFloat(value);
+  const validation = typeof(number) === 'number' && number >= 0;
+  return validation;
+};
+
+// Validation for integer
+export const validationInteger = (value) => {
+  const number = parseInt(value);
+  const validation = typeof(number) === 'number' && Number.isInteger(number) && number >= 0;
+  return validation;
+};

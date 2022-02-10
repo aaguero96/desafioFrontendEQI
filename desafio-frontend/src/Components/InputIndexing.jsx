@@ -1,7 +1,7 @@
 import React from 'react';
 import { getSimulationFromAPI } from '../Functions/functions';
 import '../CSS/InputIndexing.css';
-import { INITIAL_STATE } from '../Reducers/myReducer';
+import '../CSS/Selector.css';
 import { changeIndexingAction } from '../Actions';
 import { connect } from 'react-redux';
 
@@ -39,6 +39,14 @@ class InputIndexing extends React.Component {
     changeIndexing(name);
   };
 
+  selectedSymbol = (element) => {
+    const { selectedIndexing } = this.props;
+    if (selectedIndexing === element) {
+      return '✓';
+    };
+    return '';
+  };
+
   renderButtons = () => {
     const { indexingList, loadingList } = this.state;
     if (loadingList) {
@@ -49,13 +57,13 @@ class InputIndexing extends React.Component {
     return (
       indexingList.map((element) => (
         <button
-          key={ `Rendimento: ${element}` }
+          key={ `Indexacao: ${element}` }
           type="button"
           name={ element }
-          className={ this.correctClass(element) }
+          className={ `${this.correctClass(element)} selector` }
           onClick={ this.changeSelected }
         >
-          {element}
+          {`${this.selectedSymbol(element)} ${element}`}
         </button>
       ))
     )
@@ -68,7 +76,7 @@ class InputIndexing extends React.Component {
   render() {
     return (
       <div>
-        <h3>Rendimento</h3>
+        <h3>Indexação</h3>
         { this.renderButtons() }
       </div>
     )

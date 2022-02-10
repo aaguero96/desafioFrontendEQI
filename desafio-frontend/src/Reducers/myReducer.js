@@ -7,6 +7,10 @@ export const INITIAL_STATE = {
   deadlines: '',
   income: 'bruto',
   indexing: 'pre',
+  profitabilityFreq: 'anual',
+  ipcaFreq: 'anual',
+  cdiFreq: 'anual',
+  deadLinePeriodicity: 'meses',
 };
 
 export function myReducer(state = INITIAL_STATE, action) {
@@ -38,6 +42,16 @@ export function myReducer(state = INITIAL_STATE, action) {
       }
     case 'CLEAN_STATES':
       return INITIAL_STATE;
+    case 'CHANGE_FREQUENCY':
+      return {
+        ...state,
+        [action.key]: action.newFrequency,
+      };
+    case 'CHANGE_PERIODICITY':
+      return {
+        ...state,
+        [action.key]: action.newPeriodicity,
+      };
     default:
       return state;
   }

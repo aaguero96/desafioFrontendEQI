@@ -1,9 +1,10 @@
 import React from 'react';
 import { changeIntegerStateAction } from '../Actions';
 import { connect } from 'react-redux';
+import '../CSS/Input.css';
 
 const nameToKey = {
-  'Prazo (em meses)': 'deadlines',
+  'Prazo': 'deadlines',
 };
 
 class InputInteger extends React.Component {
@@ -17,6 +18,7 @@ class InputInteger extends React.Component {
       <label htmlFor={ name }>
         <h3>{ name }</h3>
         <input
+          className="input"
           value={ integerState[nameToKey[name]] }
           onChange={ ({ target: { value } }) => changeIntegerState(nameToKey[name], value) }
           type="text" 

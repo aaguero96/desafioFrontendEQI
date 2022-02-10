@@ -1,6 +1,7 @@
 import React from 'react';
 import { getSimulationFromAPI } from '../Functions/functions';
 import '../CSS/InputIncome.css';
+import '../CSS/Selector.css';
 import { changeIncomeAction } from '../Actions';
 import { connect } from 'react-redux';
 
@@ -33,6 +34,14 @@ class InputIncome extends React.Component {
     return NON_SELECTED_CLASS;
   };
 
+  selectedSymbol = (element) => {
+    const { selectedIncome } = this.props;
+    if (selectedIncome === element) {
+      return '✓';
+    };
+    return '';
+  };
+
   changeSelected = ({ target: { name } }) => {
     const { changeIncome } = this.props;
     changeIncome(name)
@@ -51,10 +60,10 @@ class InputIncome extends React.Component {
           key={ `Rendimento: ${element}` }
           type="button"
           name={ element }
-          className={ this.correctClass(element) }
+          className={ `${this.correctClass(element)} selector` }
           onClick={ this.changeSelected }
         >
-          {element}
+          {`${this.selectedSymbol(element)} ${element}`}
         </button>
       ))
     )

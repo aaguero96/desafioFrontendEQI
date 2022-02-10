@@ -1,0 +1,13 @@
+.selector {
+  height: 40px;
+  font-size: 15px;
+  width: 80px;
+}
+
+.selector:nth-of-type(1) {
+  border-radius: 5px 0 0 5px;
+}
+
+.selector:last-of-type {
+  border-radius: 0 5px 5px 0;
+}
