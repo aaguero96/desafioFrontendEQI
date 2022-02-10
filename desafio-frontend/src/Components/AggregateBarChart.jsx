@@ -36,10 +36,9 @@ class AggregateBarChart extends React.Component {
     } = this.props;
     return ( 
       <div>
-        <h1>Teste</h1> 
         <Bar
           width="600px"
-          height="400px"
+          height="300%"
           data={ {
             labels: [...Array(deadLineInMonth + 1).keys()],
             datasets: [
