@@ -1,6 +1,7 @@
 import React from 'react';
 import { changeCurrencyStateAction } from '../Actions';
 import { connect } from 'react-redux';
+import '../CSS/Input.css';
 
 const nameToKey = {
   'Aporte Inicial': 'inContribuition',
@@ -18,6 +19,7 @@ class InputCurrency extends React.Component {
       <label htmlFor={ name }>
         <h3>{ name }</h3>
         <input
+          className="input"
           value={ currencyState[nameToKey[name]] }
           onChange={ ({ target: { value } }) => changeCurrencyState(nameToKey[name], value) }
           type="text" 

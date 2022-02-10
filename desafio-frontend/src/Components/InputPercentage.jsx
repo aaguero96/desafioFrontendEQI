@@ -1,6 +1,7 @@
 import React from 'react';
 import { changePercentageStateAction } from '../Actions';
 import { connect } from 'react-redux';
+import '../CSS/Input.css';
 
 const nameToKey = {
   'Rentabilidade': 'profitability',
@@ -19,6 +20,7 @@ class InputPercentage extends React.Component {
       <label htmlFor={ name }>
         <h3>{ name }</h3>
         <input
+          className="input"
           value={ percentageState[nameToKey[name]] }
           onChange={ ({ target: { value } }) => changePercentageState(nameToKey[name], value) }
           type="text" 
