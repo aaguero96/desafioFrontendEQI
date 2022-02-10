@@ -15,48 +15,59 @@ import {
   validationPercentage,
 } from './Functions/functions';
 import './CSS/App.css';
+import { logoURL } from './Images/logo.js';
 
 function App() {
   return (
     <>
-      <h1>Simulador de Investimentos</h1>
-      <CleanButton />
+      <div className="header">
+        <CleanButton />
+        <h1>Simulador de Investimentos</h1>
+        <img className="logo" src={ logoURL }/>
+      </div>
+      <hr className="barra-divisoria"/>
       <div className="container-principal">
         <div className="container-formulario">
-          <div className="container-valores">
+          <div className="container-selectors">
             <InputIncome />
-            <InputIndexing />
             <div>
-              <InputCurrency name={ "Aporte Inicial" }/>
-              <ValidationMessage name={ "Aporte Inicial" } validationFunction={ validationCurrencies }/>
+              <InputIndexing />
+              <IndexingMessage />
             </div>
-            <div>
-              <InputCurrency name={ "Aporte Mensal" }/>
-              <ValidationMessage name={ "Aporte Mensal" } validationFunction={ validationCurrencies }/>
-            </div>
-            <div>
-              <InputInteger name={ "Prazo" }/>
-              <SelectPeriodicity name={ "Prazo" } />
-              <ValidationMessage name={ "Prazo" } validationFunction={ validationInteger }/>
-            </div> 
           </div>
-          <div className="container-porcentagens">
+          <div className="container-inputs">
+            <div className="container-valores">
               <div>
-                <InputPercentage name={ "Rentabilidade" }/>
-                <SelectFrequency name ={ "Rentabilidade" }/>
-                <IndexingMessage />
-                <ValidationMessage name={ "Rentabilidade" } validationFunction={ validationPercentage }/>
+                <InputCurrency name={ "Aporte Inicial" }/>
+                <ValidationMessage name={ "Aporte Inicial" } validationFunction={ validationCurrencies }/>
               </div>
               <div>
-                <InputPercentage name={ "IPCA" }/>
-                <SelectFrequency name ={ "IPCA" }/>
-                <ValidationMessage name={ "IPCA" } validationFunction={ validationPercentage }/>
+                <InputCurrency name={ "Aporte Mensal" }/>
+                <ValidationMessage name={ "Aporte Mensal" } validationFunction={ validationCurrencies }/>
               </div>
               <div>
-                <InputPercentage name={ "CDI" }/>
-                <SelectFrequency name ={ "CDI" }/>
-                <ValidationMessage name={ "CDI" } validationFunction={ validationPercentage }/>
+                <InputInteger name={ "Prazo" }/>
+                <SelectPeriodicity name={ "Prazo" } />
+                <ValidationMessage name={ "Prazo" } validationFunction={ validationInteger }/>
               </div> 
+            </div>
+            <div className="container-porcentagens">
+                <div>
+                  <InputPercentage name={ "Rentabilidade" }/>
+                  <SelectFrequency name ={ "Rentabilidade" }/>
+                  <ValidationMessage name={ "Rentabilidade" } validationFunction={ validationPercentage }/>
+                </div>
+                <div>
+                  <InputPercentage name={ "IPCA" }/>
+                  <SelectFrequency name ={ "IPCA" }/>
+                  <ValidationMessage name={ "IPCA" } validationFunction={ validationPercentage }/>
+                </div>
+                <div>
+                  <InputPercentage name={ "CDI" }/>
+                  <SelectFrequency name ={ "CDI" }/>
+                  <ValidationMessage name={ "CDI" } validationFunction={ validationPercentage }/>
+                </div> 
+            </div>
           </div>
         </div>
         <div container-indicadores>
