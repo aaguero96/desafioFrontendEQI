@@ -1,5 +1,5 @@
 import React from 'react';
-import '../CSS/InputIndexing.css';
+import '../CSS/IndexingMessage.css';
 import { connect } from 'react-redux';
 
 class IndexingMessage extends React.Component {
@@ -16,7 +16,7 @@ class IndexingMessage extends React.Component {
 
   render() {
     return (
-      <p>{ this.message() }</p>
+      <p className="indexing-message">{ this.message() }</p>
     )
   }
 };
