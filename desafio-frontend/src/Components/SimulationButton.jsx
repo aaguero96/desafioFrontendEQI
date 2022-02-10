@@ -18,7 +18,8 @@ class SimulationButton extends React.Component {
   };
 
   periodicityObject = {
-
+    'meses': 1,
+    'anos':12,
   };
 
   interestRateByMonth = () => {
@@ -96,7 +97,7 @@ class SimulationButton extends React.Component {
       deadlines,
       deadLinePeriodicity,
     } } = this.props;
-    return deadlines * deadLinePeriodicity;
+    return deadlines * this.periodicityObject[deadLinePeriodicity];
   }
 
   render() {
@@ -111,10 +112,10 @@ class SimulationButton extends React.Component {
             <div>
               { this.showParameters() }
               <AggregateBarChart
-                interestRate={ this.interestRateByMonth() }
-                deadLine={ this.deadlineInMonth }
+                interestRateByMonth={ this.interestRateByMonth() }
+                deadLineInMonth={ this.deadlineInMonth() }
                 inContribuition={ inContribuition }
-                mensalContribuition={ mensalContribuition }
+                montlyContribuition={ mensalContribuition }
               />
             </div>
           ) : (

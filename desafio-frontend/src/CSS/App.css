@@ -1,0 +1,14 @@
+.container-principal {
+  display: flex;
+  width: 100%;
+
+}
+
+.container-formulario {
+  display: flex;
+  width: 50%;
+}
+
+.container-indicadores {
+  width: 50%;
+}
