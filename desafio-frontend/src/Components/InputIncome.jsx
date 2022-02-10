@@ -1,6 +1,7 @@
 import React from 'react';
 import { getSimulationFromAPI } from '../Functions/functions';
 import '../CSS/InputIncome.css';
+import '../CSS/Selector.css';
 import { changeIncomeAction } from '../Actions';
 import { connect } from 'react-redux';
 
@@ -51,7 +52,7 @@ class InputIncome extends React.Component {
           key={ `Rendimento: ${element}` }
           type="button"
           name={ element }
-          className={ this.correctClass(element) }
+          className={ `${this.correctClass(element)} selector` }
           onClick={ this.changeSelected }
         >
           {element}

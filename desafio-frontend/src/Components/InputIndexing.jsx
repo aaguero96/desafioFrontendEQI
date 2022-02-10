@@ -1,6 +1,7 @@
 import React from 'react';
 import { getSimulationFromAPI } from '../Functions/functions';
 import '../CSS/InputIndexing.css';
+import '../CSS/Selector.css';
 import { changeIndexingAction } from '../Actions';
 import { connect } from 'react-redux';
 
@@ -51,7 +52,7 @@ class InputIndexing extends React.Component {
           key={ `Indexacao: ${element}` }
           type="button"
           name={ element }
-          className={ this.correctClass(element) }
+          className={ `${this.correctClass(element)} selector` }
           onClick={ this.changeSelected }
         >
           {element}
