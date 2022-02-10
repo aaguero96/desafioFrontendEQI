@@ -43,13 +43,13 @@ class AggregateBarChart extends React.Component {
             labels: [...Array(deadLineInMonth + 1).keys()],
             datasets: [
               {
-                backgroundColor:'blue',
+                backgroundColor:'#ED8E53',
                 label: 'Com Aporte',
                 data: this.data(montlyContribuition),
                 grouped: true,
               },
               {
-                backgroundColor:'red',
+                backgroundColor:'#151B1E',
                 label: 'Sem Aporte',
                 data: this.data(0),
                 grouped: true,
