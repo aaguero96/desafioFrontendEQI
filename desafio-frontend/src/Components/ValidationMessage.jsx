@@ -1,5 +1,5 @@
 import React from 'react';
-import '../CSS/InputIndexing.css';
+import '../CSS/ValidationMessage.css'
 import { connect } from 'react-redux';
 
 class ValidationMessage extends React.Component {
@@ -25,7 +25,7 @@ class ValidationMessage extends React.Component {
 
   render() {
     return (
-      <p>{ this.message() }</p>
+      <p className="validation-message">{ this.message() }</p>
     )
   }
 };
