@@ -7,7 +7,7 @@ import {
 } from '../Functions/functions';
 import AggregateBarChart from './AggregateBarChart';
 
-class SimulationButton extends React.Component {
+class Simulation extends React.Component {
   constructor() {
     super();
   };
@@ -130,4 +130,4 @@ class SimulationButton extends React.Component {
 const mapStateToProps = (state) => ({
   myReducer: state.myReducer,
 });
-export default connect(mapStateToProps)(SimulationButton);
+export default connect(mapStateToProps)(Simulation);

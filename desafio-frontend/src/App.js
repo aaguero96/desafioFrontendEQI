@@ -6,7 +6,7 @@ import InputIndexing from './Components/InputIndexing';
 import CleanButton from './Components/CleanButton';
 import SelectFrequency from './Components/SelectFrequency';
 import SelectPeriodicity from './Components/SelectPeriodicity';
-import SimulationButton from './Components/SimulationButton';
+import Simulation from './Components/Simulation';
 import IndexingMessage from './Components/IndexingMessage';
 import ValidationMessage from './Components/ValidationMessage';
 import {
@@ -71,7 +71,7 @@ function App() {
           </div>
         </div>
         <div container-indicadores>
-          <SimulationButton />
+          <Simulation />
         </div>
       </div>
     </>
