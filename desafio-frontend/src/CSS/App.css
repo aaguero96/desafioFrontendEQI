@@ -1,14 +1,41 @@
 .container-principal {
   display: flex;
   width: 100%;
-
 }
 
 .container-formulario {
   display: flex;
-  width: 50%;
+  width: 40%;
+  flex-direction: column;
 }
 
-.container-indicadores {
-  width: 50%;
+.container-selectors {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.container-inputs {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 80px;
+  padding: 20px;
+}
+
+.barra-divisoria {
+  margin-top: 0;
+}
+
+h1 {
+  margin: auto;
 }
