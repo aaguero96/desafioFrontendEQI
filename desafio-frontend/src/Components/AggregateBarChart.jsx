@@ -95,6 +95,23 @@ class AggregateBarChart extends React.Component {
                 text: `Simulação de investimento com e sem aporte mensal de R$ ${parseFloat(montlyContribuition).toFixed(2)}.`,
               },
             },
+            scales: {
+              x: {
+                grid: {
+                  drawBorder: false,
+                  display: false,
+                }
+              },
+              y: {
+                grid: {
+                  drawBorder: false,
+                  display: false,
+                },
+                ticks: {
+                  display: false,
+                }
+              },
+            },
             responsive: true,
           } }
         />

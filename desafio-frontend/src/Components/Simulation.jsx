@@ -6,6 +6,7 @@ import {
   validationPercentage,
 } from '../Functions/functions';
 import AggregateBarChart from './AggregateBarChart';
+import '../CSS/BarChart.css';
 
 class Simulation extends React.Component {
   constructor() {
@@ -111,12 +112,14 @@ class Simulation extends React.Component {
           this.validationFill() ? (
             <div>
               { this.showParameters() }
-              <AggregateBarChart
-                interestRateByMonth={ this.interestRateByMonth() }
-                deadLineInMonth={ this.deadlineInMonth() }
-                inContribuition={ inContribuition }
-                montlyContribuition={ mensalContribuition }
-              />
+              <div className="bar-chart">
+                <AggregateBarChart
+                  interestRateByMonth={ this.interestRateByMonth() }
+                  deadLineInMonth={ this.deadlineInMonth() }
+                  inContribuition={ inContribuition }
+                  montlyContribuition={ mensalContribuition }
+                />
+              </div>
             </div>
           ) : (
             <span>Preencha os campos ao lado</span>
