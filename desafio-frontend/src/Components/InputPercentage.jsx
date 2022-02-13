@@ -19,6 +19,7 @@ class InputPercentage extends React.Component {
     return (
       <label htmlFor={ name }>
         <h3>{ name }</h3>
+        <span>%</span>
         <input
           className="input"
           value={ percentageState[nameToKey[name]] }
