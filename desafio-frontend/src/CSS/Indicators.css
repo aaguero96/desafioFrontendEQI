@@ -1,0 +1,17 @@
+.indicadores {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  flex-wrap: wrap
+}
+
+.indicadores-cards {
+  border: 1px solid black;
+  width: 200px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.indicadores-cards:nth-child(n) {
+  text-align: center;
+}

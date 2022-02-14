@@ -7,6 +7,7 @@ import {
 } from '../Functions/functions';
 import AggregateBarChart from './AggregateBarChart';
 import '../CSS/BarChart.css';
+import Indicators from './Indicators';
 
 class Simulation extends React.Component {
   constructor() {
@@ -112,6 +113,12 @@ class Simulation extends React.Component {
           this.validationFill() ? (
             <div>
               { this.showParameters() }
+                <Indicators
+                    interestRateByMonth={ this.interestRateByMonth() }
+                    deadLineInMonth={ this.deadlineInMonth() }
+                    inContribuition={ inContribuition }
+                    montlyContribuition={ mensalContribuition }
+                  />
               <div className="bar-chart">
                 <AggregateBarChart
                   interestRateByMonth={ this.interestRateByMonth() }
