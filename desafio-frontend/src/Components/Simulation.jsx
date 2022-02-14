@@ -83,14 +83,14 @@ class Simulation extends React.Component {
     const rateByMonth = this.interestRateByMonth();
     const rateByYear = Math.pow(1 + rateByMonth, 12) - 1;
     return (
-      <>
+      <div className="parametros">
         <div>
           { `Juros Real Mensal: ${(rateByMonth*100).toFixed(2)} %` }
         </div>
         <div>
           { `Juros Real Anual: ${(rateByYear*100).toFixed(2)} %` }
         </div>
-      </>
+      </div>
     )
   }
 

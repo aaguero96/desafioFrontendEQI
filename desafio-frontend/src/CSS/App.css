@@ -36,3 +36,12 @@
 h1 {
   margin: auto;
 }
+
+.parametros {
+  display: flex;
+  justify-content: space-around;
+}
+
+.parametros:nth-child(n) {
+  font-weight: bold;
+}
