@@ -106,6 +106,7 @@ class Simulation extends React.Component {
     const { myReducer: {
       inContribuition,
       mensalContribuition,
+      income,
     } } = this.props;
     return (
       <div>
@@ -118,6 +119,7 @@ class Simulation extends React.Component {
                     deadLineInMonth={ this.deadlineInMonth() }
                     inContribuition={ inContribuition }
                     montlyContribuition={ mensalContribuition }
+                    income={ income }
                   />
               <div className="bar-chart">
                 <AggregateBarChart

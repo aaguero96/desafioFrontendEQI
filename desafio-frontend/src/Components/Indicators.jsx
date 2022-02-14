@@ -1,9 +1,14 @@
 import React from 'react';
 import '../CSS/Indicators.css';
+import { getSimulationFromAPI } from '../Functions/functions';
 
 class Indicators extends React.Component {
   constructor() {
     super();
+    this.state = {
+      IR: 0,
+      loadingList: true,
+    };
   };
 
   data = (montlyContribuition) => {
@@ -25,16 +30,34 @@ class Indicators extends React.Component {
     return data;
   };
 
+  requireSimulation = async () => {
+
+    const simulationData = await getSimulationFromAPI();
+    this.setState({
+      loadingList: false,
+      IR: simulationData
+        .find((element) => element.tipoRendimento === "liquido")
+        .aliquotaIR,
+    });
+  };
+
+  componentDidMount() {
+    this.requireSimulation();
+  };
+
   render() {
+    const { IR } = this.state;
     const {
       montlyContribuition,
       inContribuition,
       deadLineInMonth,
+      income
     } = this.props;
+    const valueIR = income === 'liquido' ? IR : 0;
     const dataWithMensalContribuition = this.data(montlyContribuition);
     const grossFinalValue = dataWithMensalContribuition[dataWithMensalContribuition.length - 1];
     const investedTotalValue = parseFloat(inContribuition) + montlyContribuition * deadLineInMonth;
-    const valueOfIR = (grossFinalValue - parseFloat(inContribuition)) * 0.2;
+    const valueOfIR = (grossFinalValue - parseFloat(inContribuition)) * valueIR/100;
     const netFinalValue = grossFinalValue - valueOfIR;
     const totalGain = netFinalValue - inContribuition;
     return ( 
@@ -49,7 +72,7 @@ class Indicators extends React.Component {
         </div>
         <div className="indicadores-cards"> 
           <h4>Aliquota IR</h4>
-          <p>{ `${20} %` }</p>
+          <p>{ `${valueIR.toFixed(2)} %` }</p>
         </div>
         <div className="indicadores-cards">
           <h4>Valor pago IR</h4>
