@@ -1,24 +1,21 @@
 .container-principal {
   display: flex;
+  flex-direction: row;
   width: 100%;
 }
 
 .container-formulario {
   display: flex;
-  width: 40%;
-  flex-direction: column;
+  flex-direction: row;
+  width: 50%;
 }
 
-.container-selectors {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+.container-part1 {
+  padding: 0 30px;
 }
 
-.container-inputs {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
+.container-part2 {
+  padding: 0 30px;
 }
 
 .header {
@@ -38,4 +35,13 @@
 
 h1 {
   margin: auto;
+}
+
+.parametros {
+  display: flex;
+  justify-content: space-around;
+}
+
+.parametros:nth-child(n) {
+  font-weight: bold;
 }

@@ -6,6 +6,8 @@ import {
   validationPercentage,
 } from '../Functions/functions';
 import AggregateBarChart from './AggregateBarChart';
+import '../CSS/BarChart.css';
+import Indicators from './Indicators';
 
 class Simulation extends React.Component {
   constructor() {
@@ -81,14 +83,14 @@ class Simulation extends React.Component {
     const rateByMonth = this.interestRateByMonth();
     const rateByYear = Math.pow(1 + rateByMonth, 12) - 1;
     return (
-      <>
+      <div className="parametros">
         <div>
           { `Juros Real Mensal: ${(rateByMonth*100).toFixed(2)} %` }
         </div>
         <div>
           { `Juros Real Anual: ${(rateByYear*100).toFixed(2)} %` }
         </div>
-      </>
+      </div>
     )
   }
 
@@ -104,6 +106,7 @@ class Simulation extends React.Component {
     const { myReducer: {
       inContribuition,
       mensalContribuition,
+      income,
     } } = this.props;
     return (
       <div>
@@ -111,12 +114,21 @@ class Simulation extends React.Component {
           this.validationFill() ? (
             <div>
               { this.showParameters() }
-              <AggregateBarChart
-                interestRateByMonth={ this.interestRateByMonth() }
-                deadLineInMonth={ this.deadlineInMonth() }
-                inContribuition={ inContribuition }
-                montlyContribuition={ mensalContribuition }
-              />
+                <Indicators
+                    interestRateByMonth={ this.interestRateByMonth() }
+                    deadLineInMonth={ this.deadlineInMonth() }
+                    inContribuition={ inContribuition }
+                    montlyContribuition={ mensalContribuition }
+                    income={ income }
+                  />
+              <div className="bar-chart">
+                <AggregateBarChart
+                  interestRateByMonth={ this.interestRateByMonth() }
+                  deadLineInMonth={ this.deadlineInMonth() }
+                  inContribuition={ inContribuition }
+                  montlyContribuition={ mensalContribuition }
+                />
+              </div>
             </div>
           ) : (
             <span>Preencha os campos ao lado</span>

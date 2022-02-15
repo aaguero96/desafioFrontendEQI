@@ -41,3 +41,8 @@ export const changePeriodicityAction = (key, newPeriodicity) => ({
   newPeriodicity,
   key,
 });
+
+export const toInitialValues = (initialValues) => ({
+  type: 'INITIAL_VALUES',
+  ...initialValues,
+});

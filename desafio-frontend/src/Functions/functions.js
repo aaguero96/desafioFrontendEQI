@@ -9,6 +9,14 @@ const createRequest = (url) => new Request(url, {
 });
 
 // // Requsition Simiulations
+export async function getIndicatorsFromAPI() {
+  const URL = `${URL_BASE}indicadores`;
+  let data = await fetch(createRequest(URL));
+  data = await data.json();
+  return data;
+};
+
+// // Requsition Simiulations
 export async function getSimulationFromAPI() {
   const URL = `${URL_BASE}simulacoes`;
   let data = await fetch(createRequest(URL));
