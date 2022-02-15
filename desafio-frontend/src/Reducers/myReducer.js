@@ -52,6 +52,16 @@ export function myReducer(state = INITIAL_STATE, action) {
         ...state,
         [action.key]: action.newPeriodicity,
       };
+    case 'INITIAL_VALUES':
+      return {
+        ...state,
+        inContribuition: action.inContribuition,
+        mensalContribuition: action.mensalContribuition,
+        profitability: action.profitability,
+        ipca: action.ipca,
+        cdi: action.cdi,
+        deadlines: action.deadlines,
+      }
     default:
       return state;
   }
