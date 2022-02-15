@@ -13,6 +13,7 @@ import {
   validationInteger,
   validationPercentage,
 } from '../Functions/functions';
+import IncomeMessage from './IncomeMessage';
 
 class Form extends React.Component {
   constructor() {
@@ -23,7 +24,10 @@ class Form extends React.Component {
     return ( 
       <div className="container-formulario">
         <div className="container-part1">
-          <InputIncome />
+          <div>
+            <InputIncome />
+            <IncomeMessage />
+          </div>
           <div>
             <InputCurrency name={ "Aporte Inicial" }/>
             <ValidationMessage name={ "Aporte Inicial" } validationFunction={ validationCurrencies }/>
